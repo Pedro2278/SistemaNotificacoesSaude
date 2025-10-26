@@ -1,10 +1,10 @@
-Sistema de Notificações de Saúde Pública
+##Sistema de Notificações de Saúde Pública
 
 Um sistema simples para registrar, consultar e gerar relatórios de notificações de agravos de saúde pública (Hanseníase, Tuberculose e Malária), desenvolvido em Java 25 com interface de linha de comando (CLI).
 
 ---
 
-💻 Funcionalidades
+#💻 Funcionalidades
 
 Registrar Notificação
 
@@ -46,7 +46,7 @@ Formatos de CEP e datas validados
 
 ---
 
-📁 Estrutura do Projeto
+#📁 Estrutura do Projeto
 
 SistemaNotificacoesSaude/
 │
@@ -67,7 +67,7 @@ SistemaNotificacoesSaude/
 
 ---
 
-🚀 Como Executar
+#🚀 Como Executar
 
 1 - Clone o repositório:
 git clone https://github.com/SEU_USUARIO/NomeDoRepositorio.git
@@ -76,12 +76,12 @@ git clone https://github.com/SEU_USUARIO/NomeDoRepositorio.git
 4 - Interaja com o sistema pelo menu de linha de comando.
 
 ---
-📌 Observações
+#📌 Observações
 - O sistema grava os dados no arquivo notificacoes.txt.
 - Ao iniciar, o usuário deve escolher a opção desejada no menu principal.
 - Todas as opções de escolha múltipla são apresentadas ao usuário para evitar erros de digitação.
 ---
-📝 Autores
+#📝 Autores
 Daniel Sousa Crisostomo 
 
 Pedro Maia
