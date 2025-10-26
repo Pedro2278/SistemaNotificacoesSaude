@@ -1,109 +1,81 @@
-SistemaNotificacoesSaude
+🏥 SISTEMA NOTIFCAÇÔES SAÙDE
+📄 Descrição do Projeto
 
-Descrição do Projeto
+O SistemaNotificacoesSaude é um sistema desenvolvido em Java 25 para o registro, consulta e análise de notificações de saúde pública.
 
-O SistemaNotificacoesSaude é um sistema desenvolvido em Java 25, que permite o registro, consulta e análise de notificações de saúde pública com base em fichas de notificação/investigação. O sistema oferece uma interface de linha de comando (CLI) para interação com o usuário e armazena os dados em arquivos de texto.
+Ele utiliza uma interface de linha de comando (CLI) e arquivos de texto para armazenamento dos dados. O projeto segue boas práticas de Programação Orientada a Objetos (POO), garantindo organização, manutenção e extensibilidade.
 
-O projeto segue boas práticas de Programação Orientada a Objetos (POO), utilizando classes separadas para modelagem, serviços e manipulação de arquivos, garantindo organização e manutenção fácil do código.
+⚙️ Funcionalidades
+1️⃣ Registrar Notificações
 
-Funcionalidades
-1. Registrar Notificações
+O sistema permite registrar notificações com os seguintes dados:
 
-O sistema permite registrar notificações de pacientes com os seguintes dados:
+-Nome do paciente
+-Bairro
+-Data da notificação
+-Agravo
+-Idade
+-Sexo
+-Raça/Cor
+-Escolaridade
 
-Nome do paciente
+Os registros são salvos em data/notificacoes.txt.
 
-Bairro
+2️⃣ Consultar Notificações
 
-Data da notificação
+-Permite consultas com base nos seguintes critérios:
+-Por nome do paciente
+-Por bairro
+-Por período (data início e fim)
+-Por agravo
 
-Agravo
+As consultas exibem todas as notificações que correspondem aos critérios informados.
 
-Idade
+3️⃣ Gerar Relatórios
 
-Sexo
+O sistema gera relatórios estatísticos das notificações registradas:
 
-Raça/Cor
+-Total de notificações por agravo
+-Total de notificações por bairro
+-Total de notificações por mês/ano
+-Total de notificações por faixa etária
+-Total de notificações por sexo
+-Total de notificações por raça/cor
+-Total de notificações por escolaridade
 
-Escolaridade
+Os relatórios podem ser exibidos na tela ou exportados para arquivos de texto.
 
-Os registros são salvos em um arquivo de texto (data/notificacoes.txt) de forma persistente.
-
-2. Consultar Notificações
-
-O sistema permite consultas com base nos seguintes critérios:
-
-Por nome do paciente
-
-Por bairro
-
-Por período (data início e fim)
-
-Por agravo
-
-As consultas exibem na tela todas as notificações que correspondem aos critérios informados.
-
-3. Gerar Relatórios
-
-O sistema é capaz de gerar relatórios com dados estatísticos das notificações registradas, como:
-
-Total de notificações por agravo
-
-Total de notificações por bairro
-
-Total de notificações por mês/ano
-
-Total de notificações por faixa etária
-
-Total de notificações por sexo
-
-Total de notificações por raça/cor
-
-Total de notificações por escolaridade
-
-Observação: Os relatórios podem ser exibidos na tela ou exportados para arquivos de texto, dependendo da implementação adicional.
-
-Estrutura do Projeto
+🏗 Estrutura do Projeto
 SistemaNotificacoesSaude/
 ├── src/
 │   ├── Main.java                   // Classe principal com menu CLI
 │   ├── model/
-│   │   └── Notificacao.java        // Classe que representa uma notificação
+│   │   └── Notificacao.java        // Representa uma notificação
 │   ├── service/
-│   │   └── NotificacaoService.java // Classe com lógica de CRUD e relatórios
+│   │   └── NotificacaoService.java // Lógica de CRUD e relatórios
 │   └── util/
-│       └── ArquivoUtil.java        // Classe utilitária para manipulação de arquivos
+│       └── ArquivoUtil.java        // Utilitário para manipulação de arquivos
 └── data/
-    └── notificacoes.txt            // Arquivo onde as notificações são armazenadas
+    └── notificacoes.txt            // Armazenamento das notificações
 
-Tecnologias Utilizadas
+💻 Tecnologias Utilizadas
 
 Java 25
+Interface CLI
+Arquivos de texto para armazenamento
+Programação Orientada a Objetos (POO)
+Streams e Collections para manipulação de dados
 
-Interface de linha de comando (CLI)
+🚀 Como Executar
 
-Armazenamento em arquivos de texto
-
-Conceitos de Programação Orientada a Objetos (POO)
-
-Streams e Collections para filtragem e manipulação de dados
-
-Como Executar
-
-Clonar o projeto ou baixar os arquivos para o seu computador.
-
-Abrir o projeto em um IDE compatível com Java 25, como IntelliJ IDEA ou VS Code com extensão Java.
-
-Certificar-se de que a pasta data/ existe e contém o arquivo notificacoes.txt (pode estar vazio inicialmente).
-
+Clonar o projeto ou baixar os arquivos.
+Abrir o projeto em IntelliJ IDEA, VS Code ou outro IDE compatível com Java 25.
+Certificar-se de que a pasta data/ existe com o arquivo notificacoes.txt (pode estar vazio).
 Executar a classe Main.java.
+Seguir o menu CLI para registrar, consultar ou gerar relatórios.
 
-Seguir as instruções do menu CLI para registrar, consultar ou gerar relatórios de notificações.
-
-Exemplo de Uso
-
-Registrar uma notificação:
-
+📌 Exemplo de Uso
+Registrar uma Notificação
 Nome do paciente: Maria Silva
 Bairro: Centro
 Data (yyyy-mm-dd): 2025-10-26
@@ -113,35 +85,27 @@ Sexo: Feminino
 Raça/Cor: Parda
 Escolaridade: Ensino Médio
 
-
-Consultar notificações por bairro:
-
+Consultar por Bairro
 Bairro: Centro
 
-
-Gerar relatório de total por agravo:
-
+Gerar Relatório por Agravo
 Agravo: Dengue
 Total de notificações: 12
 
-Boas Práticas Implementadas
+✅ Boas Práticas Implementadas
 
-Separação de responsabilidades: Cada classe possui uma responsabilidade clara (modelo, serviço, utilitário e interface).
+-Separação de responsabilidades: Model, Service, Util e Main.
+-Persistência de dados: Arquivos de texto garantem armazenamento entre execuções.
+-Uso de Streams: Para consultas e filtragens eficientes.
+-CLI amigável: Menu intuitivo para o usuário.
 
-Persistência de dados: Todos os registros são salvos em arquivo de texto para manter os dados entre execuções.
+🌟 Possíveis Melhorias Futuras
 
-Uso de Streams: Para consultas e filtragens de dados de forma eficiente.
+-Exportação de relatórios em PDF ou CSV.
+-Adição de interface gráfica (GUI).
+-Consultas combinadas e filtros avançados.
+-Sistema de autenticação para usuários.
+-Backups automáticos do arquivo de notificações.
+Sistema de autenticação para usuários.
 
-CLI amigável: Menu simples e intuitivo para interação do usuário.
-
-Possíveis Melhorias Futuras
-
-Implementar exportação de relatórios em PDF ou CSV.
-
-Adicionar interface gráfica (GUI) para melhor usabilidade.
-
-Implementar filtros combinados para consultas mais avançadas.
-
-Adicionar autenticação de usuário para acesso ao sistema.
-
-Criar backups automáticos do arquivo de notificações.
+Backups automáticos do arquivo de notificações.
