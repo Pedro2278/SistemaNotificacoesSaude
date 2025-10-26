@@ -1,0 +1,2 @@
+Pedro;Maria;M;18;Preto;medio;17/01/2002;997768987;HANSENIASE;26/10/2025;kjhh;po;252;centro;centro;po;PI;iuub;brasil;1;23;kj;gu
+Pedr;Maria;M;18;Preta;Ensino médio completo;12/01/2002;2388993;HANSENIASE;25/10/2025;Individual;mh;252;ph;ph;corrente;PI;6888;br;1;3;ph;gf

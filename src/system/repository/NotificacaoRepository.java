@@ -1,15 +1,13 @@
 package system.repository;
 
-import system.model.Notificacao;
-import system.model.Paciente;
-import system.model.Endereco;
-import system.model.Agravo;
+import system.model.*;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NotificacaoRepository {
     private final String arquivo = "notificacoes.txt";
@@ -58,8 +56,8 @@ public class NotificacaoRepository {
             while ((linha = br.readLine()) != null) {
                 String[] dados = linha.split(";");
                 Paciente paciente = new Paciente(
-                        dados[0], dados[1], dados[2], Integer.parseInt(dados[3]), dados[4],
-                        dados[5], dados[6], dados[7]
+                        dados[0], dados[1], dados[2], Integer.parseInt(dados[3]),
+                        dados[4], dados[5], dados[6], dados[7]
                 );
                 Endereco endereco = new Endereco(
                         dados[11], dados[12], dados[13], dados[14],
@@ -79,5 +77,30 @@ public class NotificacaoRepository {
             System.out.println("Erro ao ler notificações: " + e.getMessage());
         }
         return lista;
+    }
+
+    // Consultas
+    public List<Notificacao> buscarPorNome(String nome) {
+        return listar().stream()
+                .filter(n -> n.getPaciente().getNome().equalsIgnoreCase(nome))
+                .collect(Collectors.toList());
+    }
+
+    public List<Notificacao> buscarPorBairro(String bairro) {
+        return listar().stream()
+                .filter(n -> n.getEndereco().getBairro().equalsIgnoreCase(bairro))
+                .collect(Collectors.toList());
+    }
+
+    public List<Notificacao> buscarPorPeriodo(LocalDate inicio, LocalDate fim) {
+        return listar().stream()
+                .filter(n -> !n.getDataNotificacao().isBefore(inicio) && !n.getDataNotificacao().isAfter(fim))
+                .collect(Collectors.toList());
+    }
+
+    public List<Notificacao> buscarPorAgravo(Agravo agravo) {
+        return listar().stream()
+                .filter(n -> n.getAgravo() == agravo)
+                .collect(Collectors.toList());
     }
 }
