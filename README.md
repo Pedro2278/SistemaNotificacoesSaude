@@ -1,4 +1,4 @@
-## Sistema de Notificações de Saúde Pública
+## 🏥 Sistema de Notificações de Saúde Pública
 
 Um sistema simples para registrar, consultar e gerar relatórios de notificações de agravos de saúde pública (Hanseníase, Tuberculose e Malária), desenvolvido em Java 25 com interface de linha de comando (CLI).
 
