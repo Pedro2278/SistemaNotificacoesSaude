@@ -1,111 +1,88 @@
-🏥 SISTEMA NOTIFCAÇÔES SAÙDE
-📄 Descrição do Projeto
+Sistema de Notificações de Saúde Pública
 
-O SistemaNotificacoesSaude é um sistema desenvolvido em Java 25 para o registro, consulta e análise de notificações de saúde pública.
+Um sistema simples para registrar, consultar e gerar relatórios de notificações de agravos de saúde pública (Hanseníase, Tuberculose e Malária), desenvolvido em Java 25 com interface de linha de comando (CLI).
 
-Ele utiliza uma interface de linha de comando (CLI) e arquivos de texto para armazenamento dos dados. O projeto segue boas práticas de Programação Orientada a Objetos (POO), garantindo organização, manutenção e extensibilidade.
+---
 
-⚙️ Funcionalidades
-1️⃣ Registrar Notificações
+💻 Funcionalidades
 
-O sistema permite registrar notificações com os seguintes dados:
+Registrar Notificação
 
--Nome do paciente
--Bairro
--Data da notificação
--Agravo
--Idade
--Sexo
--Raça/Cor
--Escolaridade
+Permite registrar notificações de pacientes com dados completos:
 
-Os registros são salvos em data/notificacoes.txt.
+- Nome, sexo, idade, raça/cor, escolaridade, data de nascimento, cartão SUS.
 
-2️⃣ Consultar Notificações
+- Agravo (Hanseníase, Tuberculose, Malária), tipo de notificação, data da notificação.
 
--Permite consultas com base nos seguintes critérios:
--Por nome do paciente
--Por bairro
--Por período (data início e fim)
--Por agravo
+- Endereço completo: logradouro, número, complemento, bairro, município, UF, CEP, país e zona.
 
-As consultas exibem todas as notificações que correspondem aos critérios informados.
+- Dados clínicos: número de lesões cutâneas, classificação operacional e forma clínica.
 
-3️⃣ Gerar Relatórios
+Consultar Notificações
+Possibilidade de busca por:
 
-O sistema gera relatórios estatísticos das notificações registradas:
+- Nome do paciente
+- Bairro
+- Período (datas inicial e final)
+-Tipo de agravo
 
--Total de notificações por agravo
--Total de notificações por bairro
--Total de notificações por mês/ano
--Total de notificações por faixa etária
--Total de notificações por sexo
--Total de notificações por raça/cor
--Total de notificações por escolaridade
+Gerar Relatórios
+Relatórios detalhados com contagem por:
 
-Os relatórios podem ser exibidos na tela ou exportados para arquivos de texto.
+- Agravo
+- Bairro
+- Mês/Ano
+- Sexo
+- Faixa etária
+- Raça/Cor
+- Escolaridade
+- Validações implementadas:
 
-🏗 Estrutura do Projeto
+Dados obrigatórios não podem ficar vazios
+Idade entre 0 e 120 anos
+Datas não podem estar no futuro
+Opções múltiplas apresentadas claramente ao usuário (Raça/Cor, Escolaridade, Tipo de Notificação, Zona, Agravo, UF, etc.)
+Formatos de CEP e datas validados
+
+---
+
+📁 Estrutura do Projeto
+
 SistemaNotificacoesSaude/
+│
 ├── src/
-│   ├── Main.java                   // Classe principal com menu CLI
-│   ├── model/
-│   │   └── Notificacao.java        // Representa uma notificação
-│   ├── service/
-│   │   └── NotificacaoService.java // Lógica de CRUD e relatórios
-│   └── util/
-│       └── ArquivoUtil.java        // Utilitário para manipulação de arquivos
-└── data/
-    └── notificacoes.txt            // Armazenamento das notificações
+│   └── system/
+│       ├── Main.java
+│       ├── cli/
+│       │   └── MenuCLI.java
+│       ├── model/
+│       │   ├── Agravo.java
+│       │   ├── Endereco.java
+│       │   ├── Notificacao.java
+│       │   └── Paciente.java
+│       └── repository/
+│           └── NotificacaoRepository.java
+│
+└── notificacoes.txt  (arquivo de dados)
 
-💻 Tecnologias Utilizadas
-
-Java 25
-Interface CLI
-Arquivos de texto para armazenamento
-Programação Orientada a Objetos (POO)
-Streams e Collections para manipulação de dados
+---
 
 🚀 Como Executar
 
-Clonar o projeto ou baixar os arquivos.
-Abrir o projeto em IntelliJ IDEA, VS Code ou outro IDE compatível com Java 25.
-Certificar-se de que a pasta data/ existe com o arquivo notificacoes.txt (pode estar vazio).
-Executar a classe Main.java.
-Seguir o menu CLI para registrar, consultar ou gerar relatórios.
+1 - Clone o repositório:
+git clone https://github.com/SEU_USUARIO/NomeDoRepositorio.git
+2 - Abra no VS Code ou IDE de sua preferência.
+3 - Compile e execute Main.java.
+4 - Interaja com o sistema pelo menu de linha de comando.
 
-📌 Exemplo de Uso
-Registrar uma Notificação
-Nome do paciente: Maria Silva
-Bairro: Centro
-Data (yyyy-mm-dd): 2025-10-26
-Agravo: Dengue
-Idade: 32
-Sexo: Feminino
-Raça/Cor: Parda
-Escolaridade: Ensino Médio
+---
+📌 Observações
+- O sistema grava os dados no arquivo notificacoes.txt.
+- Ao iniciar, o usuário deve escolher a opção desejada no menu principal.
+- Todas as opções de escolha múltipla são apresentadas ao usuário para evitar erros de digitação.
+---
+📝 Autores
+Daniel Sousa Crisostomo 
 
-Consultar por Bairro
-Bairro: Centro
-
-Gerar Relatório por Agravo
-Agravo: Dengue
-Total de notificações: 12
-
-✅ Boas Práticas Implementadas
-
--Separação de responsabilidades: Model, Service, Util e Main.
--Persistência de dados: Arquivos de texto garantem armazenamento entre execuções.
--Uso de Streams: Para consultas e filtragens eficientes.
--CLI amigável: Menu intuitivo para o usuário.
-
-🌟 Possíveis Melhorias Futuras
-
--Exportação de relatórios em PDF ou CSV.
--Adição de interface gráfica (GUI).
--Consultas combinadas e filtros avançados.
--Sistema de autenticação para usuários.
--Backups automáticos do arquivo de notificações.
-Sistema de autenticação para usuários.
-
-Backups automáticos do arquivo de notificações.
+Pedro Maia
+📧 pm9203872@gmail.com
