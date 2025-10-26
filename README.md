@@ -1,4 +1,5 @@
 SistemaNotificacoesSaude
+
 Descrição do Projeto
 
 O SistemaNotificacoesSaude é um sistema desenvolvido em Java 25, que permite o registro, consulta e análise de notificações de saúde pública com base em fichas de notificação/investigação. O sistema oferece uma interface de linha de comando (CLI) para interação com o usuário e armazena os dados em arquivos de texto.
