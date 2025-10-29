@@ -72,8 +72,11 @@ SistemaNotificacoesSaude/
 
 1 - Clone o repositório:
 git clone https://github.com/SEU_USUARIO/NomeDoRepositorio.git
+
 2 - Abra no VS Code ou IDE de sua preferência.
+
 3 - Compile e execute Main.java.
+
 4 - Interaja com o sistema pelo menu de linha de comando.
 
 ---
