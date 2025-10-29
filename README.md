@@ -86,7 +86,7 @@ git clone https://github.com/SEU_USUARIO/NomeDoRepositorio.git
 - Todas as opções de escolha múltipla são apresentadas ao usuário para evitar erros de digitação.
 ---
 # 📝 Autores
-Daniel Sousa Crisostomo 
+Daniel Souza Crisostomo 📧Danielsouza.c024@gmail.com
 
 Pedro Maia
 📧 pm9203872@gmail.com
