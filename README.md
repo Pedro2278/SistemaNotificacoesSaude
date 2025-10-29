@@ -87,7 +87,9 @@ git clone https://github.com/SEU_USUARIO/NomeDoRepositorio.git
 ---
 # 📝 Autores
 Daniel Souza Crisostomo 
+----
 📧 Danielsouza.c024@gmail.com
 
 Pedro Maia
+----
 📧 pm9203872@gmail.com
